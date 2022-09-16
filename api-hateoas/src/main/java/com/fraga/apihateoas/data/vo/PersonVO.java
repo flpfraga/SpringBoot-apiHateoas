@@ -4,15 +4,22 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonPropertyOrder({"id", "firstName", "lastName", "bithday", "gender"})
 public class PersonVO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private long id;
+	private Long id;
+	
+	@JsonProperty("Firt Name")
 	private String firstName;
+	@JsonProperty("Last Name")
 	private String lastName;
+	@JsonIgnore
 	private LocalDate bithday;
 	private String gender;
 	
@@ -20,11 +27,11 @@ public class PersonVO implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
