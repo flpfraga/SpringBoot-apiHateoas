@@ -18,14 +18,14 @@ public class Person implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	@Column(name = "firt-name", length = 40, nullable = false)
+	@Column(name = "firt_name", length = 40, nullable = false)
 	private String firstName;
-	@Column(name = "last-name", length = 40, nullable = false)
+	@Column(name = "last_name", length = 40, nullable = false)
 	private String lastName;
 	@Column(length = 20)
 	private LocalDate bithday;
 	@Column(length=10)
-	private String gernder;
+	private String gender;
 	
 	public Person() {
 		// TODO Auto-generated constructor stub
@@ -54,15 +54,15 @@ public class Person implements Serializable {
 	public void setBithday(LocalDate bithday) {
 		this.bithday = bithday;
 	}
-	public String getGernder() {
-		return gernder;
+	public String getGender() {
+		return gender;
 	}
-	public void setGernder(String gernder) {
-		this.gernder = gernder;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(bithday, firstName, gernder, id, lastName);
+		return Objects.hash(bithday, firstName, gender, id, lastName);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -74,12 +74,12 @@ public class Person implements Serializable {
 			return false;
 		Person other = (Person) obj;
 		return Objects.equals(bithday, other.bithday) && Objects.equals(firstName, other.firstName)
-				&& Objects.equals(gernder, other.gernder) && id == other.id && Objects.equals(lastName, other.lastName);
+				&& Objects.equals(gender, other.gender) && id == other.id && Objects.equals(lastName, other.lastName);
 	}
 	@Override
 	public String toString() {
 		return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", bithday=" + bithday
-				+ ", gernder=" + gernder + "]";
+				+ ", gernder=" + gender + "]";
 	}
 	
 	

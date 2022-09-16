@@ -1,4 +1,4 @@
-package com.fraga.apihateoasconverter;
+package com.fraga.apihateoas.converter;
 
 import java.util.List;
 import java.util.stream.Collectors;

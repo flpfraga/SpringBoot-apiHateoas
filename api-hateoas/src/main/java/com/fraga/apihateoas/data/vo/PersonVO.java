@@ -14,7 +14,7 @@ public class PersonVO implements Serializable{
 	private String firstName;
 	private String lastName;
 	private LocalDate bithday;
-	private String gernder;
+	private String gender;
 	
 	public PersonVO() {
 		// TODO Auto-generated constructor stub
@@ -52,17 +52,17 @@ public class PersonVO implements Serializable{
 		this.bithday = bithday;
 	}
 
-	public String getGernder() {
-		return gernder;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setGernder(String gernder) {
-		this.gernder = gernder;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(bithday, firstName, gernder, id, lastName);
+		return Objects.hash(bithday, firstName, gender, id, lastName);
 	}
 
 	@Override
@@ -75,7 +75,14 @@ public class PersonVO implements Serializable{
 			return false;
 		PersonVO other = (PersonVO) obj;
 		return Objects.equals(bithday, other.bithday) && Objects.equals(firstName, other.firstName)
-				&& Objects.equals(gernder, other.gernder) && id == other.id && Objects.equals(lastName, other.lastName);
-	} 
+				&& Objects.equals(gender, other.gender) && id == other.id && Objects.equals(lastName, other.lastName);
+	}
 
+	@Override
+	public String toString() {
+		return "PersonVO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", bithday=" + bithday
+				+ ", gender=" + gender + "]";
+	}
+
+	
 }
