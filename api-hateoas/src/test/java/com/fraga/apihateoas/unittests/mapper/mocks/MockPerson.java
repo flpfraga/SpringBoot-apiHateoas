@@ -1,4 +1,4 @@
-package com.fraga.apihateoas.converter.mocks;
+package com.fraga.apihateoas.unittests.mapper.mocks;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -33,7 +33,7 @@ public class MockPerson {
 		return persons;
 	}
 	
-	private Person mockEntity(Integer number) {
+	public Person mockEntity(Integer number) {
 		Person person = new Person();
 		person.setId(number.longValue());
 		person.setFirstName("First Name Teste" + number);
@@ -43,7 +43,7 @@ public class MockPerson {
 		return person;
 	}
 	
-	private PersonVO mockVO(Integer number) {
+	public PersonVO mockVO(Integer number) {
 		PersonVO person = new PersonVO();
 		person.setKey(number.longValue());
 		person.setFirstName("First Name Teste" + number);

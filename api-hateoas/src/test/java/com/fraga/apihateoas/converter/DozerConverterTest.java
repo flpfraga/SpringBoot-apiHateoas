@@ -1,15 +1,16 @@
 package com.fraga.apihateoas.converter;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.time.LocalDate;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.fraga.apihateoas.converter.mocks.MockPerson;
 import com.fraga.apihateoas.data.model.Person;
 import com.fraga.apihateoas.data.vo.PersonVO;
+import com.fraga.apihateoas.unittests.mapper.mocks.MockPerson;
 
 public class DozerConverterTest {
 
@@ -28,7 +29,6 @@ public class DozerConverterTest {
         assertEquals("Last Name Teste0", output.getLastName());
         assertEquals("Male", output.getGender());
         assertEquals(LocalDate.now(), output.getBithday());
-        System.out.println("passou aqui");
 	}
 
 	@Test

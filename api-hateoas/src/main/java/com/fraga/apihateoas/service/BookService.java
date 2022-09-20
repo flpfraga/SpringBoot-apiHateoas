@@ -38,6 +38,7 @@ public class BookService {
 
 		BookVO vo = DozerConverter.parseObject(entity, BookVO.class);
 		vo.add(linkTo(methodOn(BookController.class).findById(id)).withSelfRel());
+		System.out.println(vo.getLinks());
 		return vo;
 
 	}

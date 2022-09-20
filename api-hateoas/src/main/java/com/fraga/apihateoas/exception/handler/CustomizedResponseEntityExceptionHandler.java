@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.fraga.apihateoas.data.model.error.ErrorMessage;
+import com.fraga.apihateoas.exception.RequiredObjectIsNullException;
 import com.fraga.apihateoas.exception.ResourceNotFoundException;
 
 @ControllerAdvice
@@ -19,4 +20,12 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		ErrorMessage error = new ErrorMessage("Not Found!",HttpStatus.BAD_REQUEST.value(), ex.getMessage());
 		return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
 	}
+	
+	@ExceptionHandler(RequiredObjectIsNullException.class)
+	public final ResponseEntity<ErrorMessage> handleRequiredObjectIsNullException(Exception ex) {
+		ErrorMessage error = new ErrorMessage("Not Found!",HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
+		return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
+	
 }
