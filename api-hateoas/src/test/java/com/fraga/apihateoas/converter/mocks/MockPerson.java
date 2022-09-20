@@ -45,7 +45,7 @@ public class MockPerson {
 	
 	private PersonVO mockVO(Integer number) {
 		PersonVO person = new PersonVO();
-		person.setId(number.longValue());
+		person.setKey(number.longValue());
 		person.setFirstName("First Name Teste" + number);
 		person.setLastName("Last Name Teste" + number);
 		person.setGender(((number % 2)==0)? "Male":"Female");

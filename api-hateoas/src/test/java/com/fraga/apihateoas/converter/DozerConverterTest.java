@@ -23,7 +23,7 @@ public class DozerConverterTest {
 	@Test
 	public void parseEntityToVoTest() {
 		PersonVO output = DozerConverter.parseObject(inputObject.mockEntity(), PersonVO.class);
-		assertEquals(Long.valueOf(0L), output.getId());
+		assertEquals(Long.valueOf(0L), output.getKey());
         assertEquals("First Name Teste0", output.getFirstName());
         assertEquals("Last Name Teste0", output.getLastName());
         assertEquals("Male", output.getGender());
@@ -46,22 +46,21 @@ public class DozerConverterTest {
 		List<PersonVO> outputList= DozerConverter.parseList(inputObject.mockEntityList(), PersonVO.class);
 		
 		PersonVO outputZero = outputList.get(0);
-		assertEquals(Long.valueOf(0L), outputZero.getId());
-		assertEquals(Long.valueOf(0L), outputZero.getId());
+		assertEquals(Long.valueOf(0L), outputZero.getKey());
 		assertEquals("First Name Teste0", outputZero.getFirstName());
 		assertEquals("Last Name Teste0", outputZero.getLastName());
 		assertEquals("Male", outputZero.getGender());
 		assertEquals(LocalDate.now(), outputZero.getBithday());
 
 		PersonVO outputSix = outputList.get(6);
-		assertEquals(Long.valueOf(6L), outputSix.getId());
+		assertEquals(Long.valueOf(6L), outputSix.getKey());
 		assertEquals("First Name Teste6", outputSix.getFirstName());
 		assertEquals("Last Name Teste6", outputSix.getLastName());
 		assertEquals("Male", outputSix.getGender());
 		assertEquals(LocalDate.now().plusDays(6), outputSix.getBithday());
 
 		PersonVO outputThirtenn = outputList.get(13);
-		assertEquals(Long.valueOf(13L), outputThirtenn.getId());
+		assertEquals(Long.valueOf(13L), outputThirtenn.getKey());
 		assertEquals("First Name Teste13", outputThirtenn.getFirstName());
 		assertEquals("Last Name Teste13", outputThirtenn.getLastName());
 		assertEquals("Female", outputThirtenn.getGender());

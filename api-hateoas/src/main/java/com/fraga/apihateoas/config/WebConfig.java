@@ -15,11 +15,11 @@ import com.fraga.apihateoas.serialization.converter.YamlJackson2HttpMessageConve
 //@EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
-//	private static final MediaType MEDIA_TYPE_YML = MediaType.valueOf("application/x-yaml");
-//	
-//	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-//		converters.add(new YamlJackson2HttpMessageConverter());
-//	}
+	private static final MediaType MEDIA_TYPE_APPLICATION_YML = MediaType.valueOf("application/x-yaml");
+	
+	public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
+		converters.add(new YamlJackson2HttpMessageConverter());
+	}
 
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
@@ -43,7 +43,7 @@ public class WebConfig implements WebMvcConfigurer {
 		configurer.favorParameter(false).ignoreAcceptHeader(false).useRegisteredExtensionsOnly(false)
 				.defaultContentType(MediaType.APPLICATION_JSON).mediaType("json", MediaType.APPLICATION_JSON)
 				.mediaType("xml", MediaType.APPLICATION_XML)
-//		.mediaType("x-yaml", MEDIA_TYPE_YML)
+		.mediaType("x-yaml", MEDIA_TYPE_APPLICATION_YML)
 		;
 	}
 
