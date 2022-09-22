@@ -25,6 +25,10 @@ public class Book implements Serializable {
 	@Column(precision = 2)
 	private Float price;
 	private String title;
+	
+	public Book() {
+		// TODO Auto-generated constructor stub
+	}
 	public Long getId() {
 		return id;
 	}

@@ -10,4 +10,7 @@ API com suporte de content negotiation, podendo fornecer e receber os dados em f
 
 Implementado funcionalidade Hateoas.
 
+Para todas funcionalidades acimas foram implementados testes unitários.
+
 API com suporte ao swagger.
+

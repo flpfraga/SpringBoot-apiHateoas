@@ -1,4 +1,4 @@
-package com.fraga.apihateoas.converter;
+package com.fraga.apihateoas.unittests.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,6 +8,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.fraga.apihateoas.converter.DozerConverter;
 import com.fraga.apihateoas.data.model.Person;
 import com.fraga.apihateoas.data.vo.PersonVO;
 import com.fraga.apihateoas.unittests.mapper.mocks.MockPerson;
